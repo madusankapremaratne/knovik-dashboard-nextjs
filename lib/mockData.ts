@@ -191,17 +191,28 @@ export const projects = [
 ];
 
 /**
- * Sub-projects for each main project
+ * Sub-projects for each main project (using real domains from data files)
  */
 export const subProjects = {
   autopal: [
-    { id: 'autopal-us', name: 'AutoPal US', region: 'North America' },
-    { id: 'autopal-eu', name: 'AutoPal EU', region: 'Europe' },
-    { id: 'autopal-asia', name: 'AutoPal Asia', region: 'Asia Pacific' },
+    { id: 'carplayhacks-com', name: 'carplayhacks.com', category: 'SEO/Blog' },
+    { id: 'screen2auto-com', name: 'screen2auto.com', category: 'SEO/Application' },
+    { id: 'wheelpal-app', name: 'wheelpal.app', category: 'Application' },
+    { id: 'androidautohacks-com', name: 'androidautohacks.com', category: 'SEO/E-commerce' },
+    { id: 'carbridgex-com', name: 'carbridgex.com', category: 'E-commerce/Application' },
+    { id: 'cartube-app', name: 'cartube.app', category: 'Application' },
+    { id: 'carstream-app', name: 'carstream.app', category: 'Application' },
+    { id: 'fermata-auto-com', name: 'fermata-auto.com', category: 'SEO/Blog' },
+    { id: 'fermabox-com', name: 'fermabox.com', category: 'E-commerce' },
   ],
   smartcey: [
-    { id: 'smartcey-home', name: 'Smartcey Home', category: 'Home Automation' },
-    { id: 'smartcey-security', name: 'Smartcey Security', category: 'Security Systems' },
+    { id: 'addtohomekit-com', name: 'addtohomekit.com', category: 'Application/Main Site' },
+    { id: 'athbridge-com', name: 'athbridge.com', category: 'E-commerce' },
+    { id: 'matterhubs-com', name: 'matterhubs.com', category: 'SEO/Blog' },
+    { id: 'zigbeehubs-com', name: 'zigbeehubs.com', category: 'SEO/Blog' },
+    { id: 'sonoffmini-com', name: 'sonoffmini.com', category: 'E-commerce' },
+    { id: 'findmy-lk', name: 'findmy.lk', category: 'E-commerce' },
+    { id: 'kodmy-com', name: 'kodmy.com', category: 'E-commerce/Platform' },
   ],
   letilo: [
     { id: 'letilo-women', name: 'Letilo Women', category: 'Women\'s Fashion' },
@@ -527,10 +538,10 @@ export const mockProjectMetrics = [
 ];
 
 /**
- * Sub-project detailed metrics
+ * Sub-project detailed metrics (using real domain IDs)
  */
 export const mockSubProjectMetrics: Record<string, any[]> = {
-  'autopal-us': [
+  'carplayhacks-com': [
     { date: '2025-11-01', revenue: 750, orders: 9, visitors: 310, conversions: 9 },
     { date: '2025-11-02', revenue: 875, orders: 11, visitors: 360, conversions: 11 },
     { date: '2025-11-03', revenue: 675, orders: 8, visitors: 285, conversions: 8 },
@@ -552,7 +563,7 @@ export const mockSubProjectMetrics: Record<string, any[]> = {
     { date: '2025-11-19', revenue: 975, orders: 12, visitors: 395, conversions: 12 },
     { date: '2025-11-20', revenue: 850, orders: 10, visitors: 350, conversions: 10 },
   ],
-  'autopal-eu': [
+  'screen2auto-com': [
     { date: '2025-11-01', revenue: 450, orders: 5, visitors: 186, conversions: 5 },
     { date: '2025-11-02', revenue: 525, orders: 6, visitors: 216, conversions: 6 },
     { date: '2025-11-03', revenue: 405, orders: 5, visitors: 171, conversions: 5 },
@@ -574,7 +585,7 @@ export const mockSubProjectMetrics: Record<string, any[]> = {
     { date: '2025-11-19', revenue: 585, orders: 7, visitors: 237, conversions: 7 },
     { date: '2025-11-20', revenue: 510, orders: 6, visitors: 210, conversions: 6 },
   ],
-  'autopal-asia': [
+  'wheelpal-app': [
     { date: '2025-11-01', revenue: 300, orders: 4, visitors: 124, conversions: 4 },
     { date: '2025-11-02', revenue: 350, orders: 4, visitors: 144, conversions: 4 },
     { date: '2025-11-03', revenue: 270, orders: 3, visitors: 114, conversions: 3 },
@@ -596,7 +607,7 @@ export const mockSubProjectMetrics: Record<string, any[]> = {
     { date: '2025-11-19', revenue: 390, orders: 4, visitors: 158, conversions: 4 },
     { date: '2025-11-20', revenue: 340, orders: 4, visitors: 140, conversions: 4 },
   ],
-  'smartcey-home': [
+  'addtohomekit-com': [
     { date: '2025-11-01', revenue: 600, orders: 7, visitors: 324, conversions: 7 },
     { date: '2025-11-02', revenue: 720, orders: 8, visitors: 378, conversions: 8 },
     { date: '2025-11-03', revenue: 540, orders: 7, visitors: 288, conversions: 7 },
@@ -618,7 +629,7 @@ export const mockSubProjectMetrics: Record<string, any[]> = {
     { date: '2025-11-19', revenue: 780, orders: 9, visitors: 414, conversions: 9 },
     { date: '2025-11-20', revenue: 690, orders: 8, visitors: 360, conversions: 8 },
   ],
-  'smartcey-security': [
+  'athbridge-com': [
     { date: '2025-11-01', revenue: 400, orders: 5, visitors: 216, conversions: 5 },
     { date: '2025-11-02', revenue: 480, orders: 6, visitors: 252, conversions: 6 },
     { date: '2025-11-03', revenue: 360, orders: 4, visitors: 192, conversions: 4 },

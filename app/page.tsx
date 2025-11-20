@@ -17,16 +17,18 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 import {
-  Calendar,
   TrendingUp,
   DollarSign,
   Filter,
   Download,
   Settings,
+  Users,
+  Eye,
+  MousePointer,
 } from 'lucide-react';
 import StatCard from '@/components/StatCard';
 import DateRangePicker from '@/components/DateRangePicker';
-import { mockIncomeData, mockProjectBreakdown } from '@/lib/mockData';
+import { mockIncomeData, mockProjectBreakdown, mockWebsiteAnalytics } from '@/lib/mockData';
 import { formatCurrency, getDateRange } from '@/lib/utils';
 
 type PeriodType = 'yesterday' | 'last7days' | 'mtd' | 'lastMonth' | 'custom';
@@ -99,6 +101,49 @@ export default function Dashboard() {
     }));
   }, [filteredData]);
 
+  // Calculate website analytics based on period
+  const filteredWebsiteData = useMemo(() => {
+    const dateRange = getDateRange(period, customDateRange);
+    return mockWebsiteAnalytics.filter((item) => {
+      const itemDate = new Date(item.date);
+      return itemDate >= dateRange.start && itemDate <= dateRange.end;
+    });
+  }, [period, customDateRange]);
+
+  // Calculate website analytics totals
+  const websiteAnalyticsTotals = useMemo(() => {
+    const totalPageViews = filteredWebsiteData.reduce((sum, item) => sum + item.pageViews, 0);
+    const totalVisitors = filteredWebsiteData.reduce((sum, item) => sum + item.uniqueVisitors, 0);
+    const totalSessions = filteredWebsiteData.reduce((sum, item) => sum + item.sessions, 0);
+    const avgBounceRate = filteredWebsiteData.length > 0
+      ? filteredWebsiteData.reduce((sum, item) => sum + item.bounceRate, 0) / filteredWebsiteData.length
+      : 0;
+    const avgSessionDuration = filteredWebsiteData.length > 0
+      ? filteredWebsiteData.reduce((sum, item) => sum + item.avgSessionDuration, 0) / filteredWebsiteData.length
+      : 0;
+
+    return {
+      totalPageViews,
+      totalVisitors,
+      totalSessions,
+      avgBounceRate,
+      avgSessionDuration,
+    };
+  }, [filteredWebsiteData]);
+
+  // Website analytics chart data
+  const websiteChartData = useMemo(() => {
+    return filteredWebsiteData.map((item) => ({
+      date: new Date(item.date).toLocaleDateString('en-US', {
+        month: 'short',
+        day: 'numeric',
+      }),
+      'Page Views': item.pageViews,
+      'Visitors': item.uniqueVisitors,
+      'Sessions': item.sessions,
+    }));
+  }, [filteredWebsiteData]);
+
   const handleDateRangeChange = (startDate: Date, endDate: Date) => {
     setCustomDateRange({ startDate, endDate });
     setPeriod('custom');
@@ -164,32 +209,74 @@ export default function Dashboard() {
           </div>
         </div>
 
-        {/* Key Metrics */}
-        <div className="mb-8 grid grid-cols-1 gap-6 md:grid-cols-3">
-          <StatCard
-            title="Total Income"
-            value={formatCurrency(totals.total)}
-            icon={<DollarSign className="h-6 w-6" />}
-            trend={12.5}
-            trendLabel="vs previous period"
-            variant="primary"
-          />
-          <StatCard
-            title="Shopify Sales"
-            value={formatCurrency(totals.shopify)}
-            icon={<TrendingUp className="h-6 w-6" />}
-            trend={8.3}
-            trendLabel="vs previous period"
-            variant="secondary"
-          />
-          <StatCard
-            title="WooCommerce Sales"
-            value={formatCurrency(totals.woocommerce)}
-            icon={<TrendingUp className="h-6 w-6" />}
-            trend={15.2}
-            trendLabel="vs previous period"
-            variant="tertiary"
-          />
+        {/* Key Metrics - Income */}
+        <div className="mb-8">
+          <h2 className="mb-4 text-xl font-semibold text-white">Income Metrics</h2>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+            <StatCard
+              title="Total Income"
+              value={formatCurrency(totals.total)}
+              icon={<DollarSign className="h-6 w-6" />}
+              trend={12.5}
+              trendLabel="vs previous period"
+              variant="primary"
+            />
+            <StatCard
+              title="Shopify Sales"
+              value={formatCurrency(totals.shopify)}
+              icon={<TrendingUp className="h-6 w-6" />}
+              trend={8.3}
+              trendLabel="vs previous period"
+              variant="secondary"
+            />
+            <StatCard
+              title="WooCommerce Sales"
+              value={formatCurrency(totals.woocommerce)}
+              icon={<TrendingUp className="h-6 w-6" />}
+              trend={15.2}
+              trendLabel="vs previous period"
+              variant="tertiary"
+            />
+          </div>
+        </div>
+
+        {/* Website Analytics Metrics */}
+        <div className="mb-8">
+          <h2 className="mb-4 text-xl font-semibold text-white">Website Analytics</h2>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <StatCard
+              title="Total Visitors"
+              value={websiteAnalyticsTotals.totalVisitors.toLocaleString()}
+              icon={<Users className="h-6 w-6" />}
+              trend={10.2}
+              trendLabel="vs previous period"
+              variant="primary"
+            />
+            <StatCard
+              title="Page Views"
+              value={websiteAnalyticsTotals.totalPageViews.toLocaleString()}
+              icon={<Eye className="h-6 w-6" />}
+              trend={14.8}
+              trendLabel="vs previous period"
+              variant="secondary"
+            />
+            <StatCard
+              title="Total Sessions"
+              value={websiteAnalyticsTotals.totalSessions.toLocaleString()}
+              icon={<MousePointer className="h-6 w-6" />}
+              trend={9.5}
+              trendLabel="vs previous period"
+              variant="tertiary"
+            />
+            <StatCard
+              title="Avg. Bounce Rate"
+              value={`${websiteAnalyticsTotals.avgBounceRate.toFixed(1)}%`}
+              icon={<TrendingUp className="h-6 w-6" />}
+              trend={-2.3}
+              trendLabel="vs previous period"
+              variant="primary"
+            />
+          </div>
         </div>
 
         {/* Charts Section */}
@@ -291,7 +378,7 @@ export default function Dashboard() {
         </div>
 
         {/* Bar Chart - Platform Comparison */}
-        <div className="rounded-2xl border border-slate-800 bg-slate-900/50 p-6 backdrop-blur-sm">
+        <div className="mb-8 rounded-2xl border border-slate-800 bg-slate-900/50 p-6 backdrop-blur-sm">
           <div className="mb-6">
             <h2 className="text-lg font-semibold text-white">
               Platform Comparison
@@ -321,6 +408,55 @@ export default function Dashboard() {
                 radius={[8, 8, 0, 0]}
               />
             </BarChart>
+          </ResponsiveContainer>
+        </div>
+
+        {/* Line Chart - Website Analytics Trend */}
+        <div className="rounded-2xl border border-slate-800 bg-slate-900/50 p-6 backdrop-blur-sm">
+          <div className="mb-6">
+            <h2 className="text-lg font-semibold text-white">
+              Website Traffic Trend
+            </h2>
+            <p className="text-sm text-slate-400">
+              Page views, visitors, and sessions across all websites
+            </p>
+          </div>
+          <ResponsiveContainer width="100%" height={350}>
+            <LineChart data={websiteChartData}>
+              <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
+              <XAxis stroke="#64748b" style={{ fontSize: '12px' }} />
+              <YAxis stroke="#64748b" style={{ fontSize: '12px' }} />
+              <Tooltip
+                contentStyle={{
+                  backgroundColor: '#1e293b',
+                  border: '1px solid #475569',
+                  borderRadius: '8px',
+                }}
+                formatter={(value) => (value as number).toLocaleString()}
+              />
+              <Legend />
+              <Line
+                type="monotone"
+                dataKey="Page Views"
+                stroke="#3B82F6"
+                strokeWidth={2}
+                dot={false}
+              />
+              <Line
+                type="monotone"
+                dataKey="Visitors"
+                stroke="#10B981"
+                strokeWidth={2}
+                dot={false}
+              />
+              <Line
+                type="monotone"
+                dataKey="Sessions"
+                stroke="#F59E0B"
+                strokeWidth={2}
+                dot={false}
+              />
+            </LineChart>
           </ResponsiveContainer>
         </div>
 

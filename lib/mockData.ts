@@ -180,3 +180,530 @@ export const mockWebsiteAnalytics = [
   { date: '2025-11-19', pageViews: 7900, uniqueVisitors: 2300, sessions: 3450, bounceRate: 35.8, avgSessionDuration: 252 },
   { date: '2025-11-20', pageViews: 7000, uniqueVisitors: 2000, sessions: 3000, bounceRate: 38.0, avgSessionDuration: 235 },
 ];
+
+/**
+ * Project metadata
+ */
+export const projects = [
+  { id: 'autopal', name: 'AutoPal', color: '#3B82F6', description: 'Automotive parts marketplace' },
+  { id: 'smartcey', name: 'Smartcey', color: '#10B981', description: 'Smart home devices' },
+  { id: 'letilo', name: 'Letilo', color: '#F59E0B', description: 'Fashion & lifestyle' },
+];
+
+/**
+ * Sub-projects for each main project
+ */
+export const subProjects = {
+  autopal: [
+    { id: 'autopal-us', name: 'AutoPal US', region: 'North America' },
+    { id: 'autopal-eu', name: 'AutoPal EU', region: 'Europe' },
+    { id: 'autopal-asia', name: 'AutoPal Asia', region: 'Asia Pacific' },
+  ],
+  smartcey: [
+    { id: 'smartcey-home', name: 'Smartcey Home', category: 'Home Automation' },
+    { id: 'smartcey-security', name: 'Smartcey Security', category: 'Security Systems' },
+  ],
+  letilo: [
+    { id: 'letilo-women', name: 'Letilo Women', category: 'Women\'s Fashion' },
+    { id: 'letilo-men', name: 'Letilo Men', category: 'Men\'s Fashion' },
+    { id: 'letilo-accessories', name: 'Letilo Accessories', category: 'Accessories' },
+  ],
+};
+
+/**
+ * Enhanced project metrics with AOV, Conversion Rate, etc.
+ */
+export const mockProjectMetrics = [
+  // October data
+  {
+    date: '2025-10-01',
+    autopal: { revenue: 1000, orders: 12, visitors: 450, conversions: 12 },
+    smartcey: { revenue: 700, orders: 8, visitors: 380, conversions: 8 },
+    letilo: { revenue: 300, orders: 15, visitors: 370, conversions: 15 }
+  },
+  {
+    date: '2025-10-02',
+    autopal: { revenue: 1200, orders: 14, visitors: 520, conversions: 14 },
+    smartcey: { revenue: 900, orders: 10, visitors: 450, conversions: 10 },
+    letilo: { revenue: 300, orders: 16, visitors: 430, conversions: 16 }
+  },
+  {
+    date: '2025-10-03',
+    autopal: { revenue: 850, orders: 10, visitors: 380, conversions: 10 },
+    smartcey: { revenue: 650, orders: 7, visitors: 320, conversions: 7 },
+    letilo: { revenue: 200, orders: 10, visitors: 280, conversions: 10 }
+  },
+  {
+    date: '2025-10-04',
+    autopal: { revenue: 1400, orders: 16, visitors: 580, conversions: 16 },
+    smartcey: { revenue: 900, orders: 11, visitors: 490, conversions: 11 },
+    letilo: { revenue: 450, orders: 22, visitors: 440, conversions: 22 }
+  },
+  {
+    date: '2025-10-05',
+    autopal: { revenue: 1000, orders: 12, visitors: 470, conversions: 12 },
+    smartcey: { revenue: 800, orders: 9, visitors: 410, conversions: 9 },
+    letilo: { revenue: 350, orders: 18, visitors: 390, conversions: 18 }
+  },
+  {
+    date: '2025-10-06',
+    autopal: { revenue: 1800, orders: 21, visitors: 720, conversions: 21 },
+    smartcey: { revenue: 1200, orders: 14, visitors: 630, conversions: 14 },
+    letilo: { revenue: 500, orders: 25, visitors: 570, conversions: 25 }
+  },
+  {
+    date: '2025-10-07',
+    autopal: { revenue: 1500, orders: 18, visitors: 630, conversions: 18 },
+    smartcey: { revenue: 1000, orders: 12, visitors: 540, conversions: 12 },
+    letilo: { revenue: 500, orders: 25, visitors: 530, conversions: 25 }
+  },
+  {
+    date: '2025-10-08',
+    autopal: { revenue: 900, orders: 11, visitors: 390, conversions: 11 },
+    smartcey: { revenue: 650, orders: 8, visitors: 330, conversions: 8 },
+    letilo: { revenue: 250, orders: 13, visitors: 280, conversions: 13 }
+  },
+  {
+    date: '2025-10-09',
+    autopal: { revenue: 1200, orders: 14, visitors: 510, conversions: 14 },
+    smartcey: { revenue: 800, orders: 9, visitors: 440, conversions: 9 },
+    letilo: { revenue: 450, orders: 23, visitors: 420, conversions: 23 }
+  },
+  {
+    date: '2025-10-10',
+    autopal: { revenue: 1600, orders: 19, visitors: 650, conversions: 19 },
+    smartcey: { revenue: 1100, orders: 13, visitors: 570, conversions: 13 },
+    letilo: { revenue: 500, orders: 25, visitors: 530, conversions: 25 }
+  },
+  // Add more October dates (simplified for brevity)
+  {
+    date: '2025-10-11',
+    autopal: { revenue: 1100, orders: 13, visitors: 480, conversions: 13 },
+    smartcey: { revenue: 800, orders: 9, visitors: 410, conversions: 9 },
+    letilo: { revenue: 350, orders: 18, visitors: 360, conversions: 18 }
+  },
+  {
+    date: '2025-10-12',
+    autopal: { revenue: 1400, orders: 16, visitors: 590, conversions: 16 },
+    smartcey: { revenue: 900, orders: 11, visitors: 500, conversions: 11 },
+    letilo: { revenue: 500, orders: 25, visitors: 460, conversions: 25 }
+  },
+  {
+    date: '2025-10-13',
+    autopal: { revenue: 1850, orders: 22, visitors: 760, conversions: 22 },
+    smartcey: { revenue: 1300, orders: 15, visitors: 660, conversions: 15 },
+    letilo: { revenue: 550, orders: 28, visitors: 620, conversions: 28 }
+  },
+  {
+    date: '2025-10-14',
+    autopal: { revenue: 1100, orders: 13, visitors: 490, conversions: 13 },
+    smartcey: { revenue: 750, orders: 9, visitors: 420, conversions: 9 },
+    letilo: { revenue: 400, orders: 20, visitors: 380, conversions: 20 }
+  },
+  {
+    date: '2025-10-15',
+    autopal: { revenue: 1550, orders: 18, visitors: 680, conversions: 18 },
+    smartcey: { revenue: 1050, orders: 13, visitors: 580, conversions: 13 },
+    letilo: { revenue: 600, orders: 30, visitors: 540, conversions: 30 }
+  },
+  {
+    date: '2025-10-16',
+    autopal: { revenue: 1300, orders: 15, visitors: 560, conversions: 15 },
+    smartcey: { revenue: 900, orders: 11, visitors: 480, conversions: 11 },
+    letilo: { revenue: 400, orders: 20, visitors: 440, conversions: 20 }
+  },
+  {
+    date: '2025-10-17',
+    autopal: { revenue: 1500, orders: 18, visitors: 620, conversions: 18 },
+    smartcey: { revenue: 1000, orders: 12, visitors: 530, conversions: 12 },
+    letilo: { revenue: 500, orders: 25, visitors: 500, conversions: 25 }
+  },
+  {
+    date: '2025-10-18',
+    autopal: { revenue: 1950, orders: 23, visitors: 790, conversions: 23 },
+    smartcey: { revenue: 1300, orders: 15, visitors: 700, conversions: 15 },
+    letilo: { revenue: 650, orders: 33, visitors: 640, conversions: 33 }
+  },
+  {
+    date: '2025-10-19',
+    autopal: { revenue: 1000, orders: 12, visitors: 440, conversions: 12 },
+    smartcey: { revenue: 700, orders: 8, visitors: 370, conversions: 8 },
+    letilo: { revenue: 350, orders: 18, visitors: 350, conversions: 18 }
+  },
+  {
+    date: '2025-10-20',
+    autopal: { revenue: 1400, orders: 16, visitors: 590, conversions: 16 },
+    smartcey: { revenue: 900, orders: 11, visitors: 510, conversions: 11 },
+    letilo: { revenue: 500, orders: 25, visitors: 470, conversions: 25 }
+  },
+  {
+    date: '2025-10-21',
+    autopal: { revenue: 1700, orders: 20, visitors: 700, conversions: 20 },
+    smartcey: { revenue: 1150, orders: 14, visitors: 600, conversions: 14 },
+    letilo: { revenue: 500, orders: 25, visitors: 550, conversions: 25 }
+  },
+  {
+    date: '2025-10-22',
+    autopal: { revenue: 1200, orders: 14, visitors: 520, conversions: 14 },
+    smartcey: { revenue: 800, orders: 9, visitors: 440, conversions: 9 },
+    letilo: { revenue: 450, orders: 23, visitors: 410, conversions: 23 }
+  },
+  {
+    date: '2025-10-23',
+    autopal: { revenue: 1500, orders: 18, visitors: 640, conversions: 18 },
+    smartcey: { revenue: 1000, orders: 12, visitors: 550, conversions: 12 },
+    letilo: { revenue: 550, orders: 28, visitors: 520, conversions: 28 }
+  },
+  {
+    date: '2025-10-24',
+    autopal: { revenue: 1800, orders: 21, visitors: 720, conversions: 21 },
+    smartcey: { revenue: 1200, orders: 14, visitors: 630, conversions: 14 },
+    letilo: { revenue: 500, orders: 25, visitors: 580, conversions: 25 }
+  },
+  {
+    date: '2025-10-25',
+    autopal: { revenue: 1100, orders: 13, visitors: 480, conversions: 13 },
+    smartcey: { revenue: 750, orders: 9, visitors: 405, conversions: 9 },
+    letilo: { revenue: 400, orders: 20, visitors: 370, conversions: 20 }
+  },
+  {
+    date: '2025-10-26',
+    autopal: { revenue: 1350, orders: 16, visitors: 570, conversions: 16 },
+    smartcey: { revenue: 900, orders: 11, visitors: 480, conversions: 11 },
+    letilo: { revenue: 400, orders: 20, visitors: 450, conversions: 20 }
+  },
+  {
+    date: '2025-10-27',
+    autopal: { revenue: 2050, orders: 24, visitors: 820, conversions: 24 },
+    smartcey: { revenue: 1400, orders: 16, visitors: 730, conversions: 16 },
+    letilo: { revenue: 650, orders: 33, visitors: 670, conversions: 33 }
+  },
+  {
+    date: '2025-10-28',
+    autopal: { revenue: 1400, orders: 16, visitors: 590, conversions: 16 },
+    smartcey: { revenue: 900, orders: 11, visitors: 500, conversions: 11 },
+    letilo: { revenue: 500, orders: 25, conversions: 25, visitors: 460 }
+  },
+  {
+    date: '2025-10-29',
+    autopal: { revenue: 1600, orders: 19, visitors: 660, conversions: 19 },
+    smartcey: { revenue: 1100, orders: 13, visitors: 570, conversions: 13 },
+    letilo: { revenue: 500, orders: 25, visitors: 540, conversions: 25 }
+  },
+  {
+    date: '2025-10-30',
+    autopal: { revenue: 1800, orders: 21, visitors: 760, conversions: 21 },
+    smartcey: { revenue: 1200, orders: 14, visitors: 660, conversions: 14 },
+    letilo: { revenue: 700, orders: 35, visitors: 620, conversions: 35 }
+  },
+  {
+    date: '2025-10-31',
+    autopal: { revenue: 1250, orders: 15, visitors: 540, conversions: 15 },
+    smartcey: { revenue: 850, orders: 10, visitors: 450, conversions: 10 },
+    letilo: { revenue: 400, orders: 20, visitors: 410, conversions: 20 }
+  },
+
+  // November data
+  {
+    date: '2025-11-01',
+    autopal: { revenue: 1500, orders: 18, visitors: 620, conversions: 18 },
+    smartcey: { revenue: 1000, orders: 12, visitors: 540, conversions: 12 },
+    letilo: { revenue: 500, orders: 25, visitors: 500, conversions: 25 }
+  },
+  {
+    date: '2025-11-02',
+    autopal: { revenue: 1750, orders: 21, visitors: 720, conversions: 21 },
+    smartcey: { revenue: 1200, orders: 14, visitors: 630, conversions: 14 },
+    letilo: { revenue: 550, orders: 28, visitors: 580, conversions: 28 }
+  },
+  {
+    date: '2025-11-03',
+    autopal: { revenue: 1350, orders: 16, visitors: 570, conversions: 16 },
+    smartcey: { revenue: 900, orders: 11, visitors: 480, conversions: 11 },
+    letilo: { revenue: 400, orders: 20, visitors: 440, conversions: 20 }
+  },
+  {
+    date: '2025-11-04',
+    autopal: { revenue: 1650, orders: 19, visitors: 680, conversions: 19 },
+    smartcey: { revenue: 1100, orders: 13, visitors: 580, conversions: 13 },
+    letilo: { revenue: 500, orders: 25, visitors: 520, conversions: 25 }
+  },
+  {
+    date: '2025-11-05',
+    autopal: { revenue: 1850, orders: 22, visitors: 760, conversions: 22 },
+    smartcey: { revenue: 1300, orders: 15, visitors: 660, conversions: 15 },
+    letilo: { revenue: 550, orders: 28, visitors: 600, conversions: 28 }
+  },
+  {
+    date: '2025-11-06',
+    autopal: { revenue: 1400, orders: 16, visitors: 590, conversions: 16 },
+    smartcey: { revenue: 900, orders: 11, visitors: 510, conversions: 11 },
+    letilo: { revenue: 500, orders: 25, visitors: 470, conversions: 25 }
+  },
+  {
+    date: '2025-11-07',
+    autopal: { revenue: 1700, orders: 20, visitors: 700, conversions: 20 },
+    smartcey: { revenue: 1150, orders: 14, visitors: 600, conversions: 14 },
+    letilo: { revenue: 500, orders: 25, visitors: 560, conversions: 25 }
+  },
+  {
+    date: '2025-11-08',
+    autopal: { revenue: 1950, orders: 23, visitors: 790, conversions: 23 },
+    smartcey: { revenue: 1300, orders: 15, visitors: 690, conversions: 15 },
+    letilo: { revenue: 650, orders: 33, visitors: 630, conversions: 33 }
+  },
+  {
+    date: '2025-11-09',
+    autopal: { revenue: 1500, orders: 18, visitors: 620, conversions: 18 },
+    smartcey: { revenue: 1000, orders: 12, visitors: 540, conversions: 12 },
+    letilo: { revenue: 500, orders: 25, visitors: 500, conversions: 25 }
+  },
+  {
+    date: '2025-11-10',
+    autopal: { revenue: 1750, orders: 21, visitors: 720, conversions: 21 },
+    smartcey: { revenue: 1200, orders: 14, visitors: 630, conversions: 14 },
+    letilo: { revenue: 550, orders: 28, visitors: 580, conversions: 28 }
+  },
+  {
+    date: '2025-11-11',
+    autopal: { revenue: 1600, orders: 19, visitors: 660, conversions: 19 },
+    smartcey: { revenue: 1100, orders: 13, visitors: 570, conversions: 13 },
+    letilo: { revenue: 500, orders: 25, visitors: 540, conversions: 25 }
+  },
+  {
+    date: '2025-11-12',
+    autopal: { revenue: 1850, orders: 22, visitors: 760, conversions: 22 },
+    smartcey: { revenue: 1300, orders: 15, visitors: 660, conversions: 15 },
+    letilo: { revenue: 550, orders: 28, visitors: 600, conversions: 28 }
+  },
+  {
+    date: '2025-11-13',
+    autopal: { revenue: 2050, orders: 24, visitors: 840, conversions: 24 },
+    smartcey: { revenue: 1400, orders: 16, visitors: 730, conversions: 16 },
+    letilo: { revenue: 650, orders: 33, visitors: 670, conversions: 33 }
+  },
+  {
+    date: '2025-11-14',
+    autopal: { revenue: 1400, orders: 16, visitors: 590, conversions: 16 },
+    smartcey: { revenue: 900, orders: 11, visitors: 510, conversions: 11 },
+    letilo: { revenue: 500, orders: 25, visitors: 470, conversions: 25 }
+  },
+  {
+    date: '2025-11-15',
+    autopal: { revenue: 1700, orders: 20, visitors: 700, conversions: 20 },
+    smartcey: { revenue: 1150, orders: 14, visitors: 600, conversions: 14 },
+    letilo: { revenue: 500, orders: 25, visitors: 560, conversions: 25 }
+  },
+  {
+    date: '2025-11-16',
+    autopal: { revenue: 1750, orders: 21, visitors: 720, conversions: 21 },
+    smartcey: { revenue: 1200, orders: 14, visitors: 630, conversions: 14 },
+    letilo: { revenue: 550, orders: 28, visitors: 580, conversions: 28 }
+  },
+  {
+    date: '2025-11-17',
+    autopal: { revenue: 1500, orders: 18, visitors: 620, conversions: 18 },
+    smartcey: { revenue: 1000, orders: 12, visitors: 540, conversions: 12 },
+    letilo: { revenue: 500, orders: 25, visitors: 500, conversions: 25 }
+  },
+  {
+    date: '2025-11-18',
+    autopal: { revenue: 1850, orders: 22, visitors: 760, conversions: 22 },
+    smartcey: { revenue: 1300, orders: 15, visitors: 660, conversions: 15 },
+    letilo: { revenue: 550, orders: 28, visitors: 600, conversions: 28 }
+  },
+  {
+    date: '2025-11-19',
+    autopal: { revenue: 1950, orders: 23, visitors: 790, conversions: 23 },
+    smartcey: { revenue: 1300, orders: 15, visitors: 690, conversions: 15 },
+    letilo: { revenue: 650, orders: 33, visitors: 630, conversions: 33 }
+  },
+  {
+    date: '2025-11-20',
+    autopal: { revenue: 1700, orders: 20, visitors: 700, conversions: 20 },
+    smartcey: { revenue: 1150, orders: 14, visitors: 600, conversions: 14 },
+    letilo: { revenue: 500, orders: 25, visitors: 560, conversions: 25 }
+  },
+];
+
+/**
+ * Sub-project detailed metrics
+ */
+export const mockSubProjectMetrics: Record<string, any[]> = {
+  'autopal-us': [
+    { date: '2025-11-01', revenue: 750, orders: 9, visitors: 310, conversions: 9 },
+    { date: '2025-11-02', revenue: 875, orders: 11, visitors: 360, conversions: 11 },
+    { date: '2025-11-03', revenue: 675, orders: 8, visitors: 285, conversions: 8 },
+    { date: '2025-11-04', revenue: 825, orders: 10, visitors: 340, conversions: 10 },
+    { date: '2025-11-05', revenue: 925, orders: 11, visitors: 380, conversions: 11 },
+    { date: '2025-11-06', revenue: 700, orders: 8, visitors: 295, conversions: 8 },
+    { date: '2025-11-07', revenue: 850, orders: 10, visitors: 350, conversions: 10 },
+    { date: '2025-11-08', revenue: 975, orders: 12, visitors: 395, conversions: 12 },
+    { date: '2025-11-09', revenue: 750, orders: 9, visitors: 310, conversions: 9 },
+    { date: '2025-11-10', revenue: 875, orders: 11, visitors: 360, conversions: 11 },
+    { date: '2025-11-11', revenue: 800, orders: 10, visitors: 330, conversions: 10 },
+    { date: '2025-11-12', revenue: 925, orders: 11, visitors: 380, conversions: 11 },
+    { date: '2025-11-13', revenue: 1025, orders: 12, visitors: 420, conversions: 12 },
+    { date: '2025-11-14', revenue: 700, orders: 8, visitors: 295, conversions: 8 },
+    { date: '2025-11-15', revenue: 850, orders: 10, visitors: 350, conversions: 10 },
+    { date: '2025-11-16', revenue: 875, orders: 11, visitors: 360, conversions: 11 },
+    { date: '2025-11-17', revenue: 750, orders: 9, visitors: 310, conversions: 9 },
+    { date: '2025-11-18', revenue: 925, orders: 11, visitors: 380, conversions: 11 },
+    { date: '2025-11-19', revenue: 975, orders: 12, visitors: 395, conversions: 12 },
+    { date: '2025-11-20', revenue: 850, orders: 10, visitors: 350, conversions: 10 },
+  ],
+  'autopal-eu': [
+    { date: '2025-11-01', revenue: 450, orders: 5, visitors: 186, conversions: 5 },
+    { date: '2025-11-02', revenue: 525, orders: 6, visitors: 216, conversions: 6 },
+    { date: '2025-11-03', revenue: 405, orders: 5, visitors: 171, conversions: 5 },
+    { date: '2025-11-04', revenue: 495, orders: 6, visitors: 204, conversions: 6 },
+    { date: '2025-11-05', revenue: 555, orders: 7, visitors: 228, conversions: 7 },
+    { date: '2025-11-06', revenue: 420, orders: 5, visitors: 177, conversions: 5 },
+    { date: '2025-11-07', revenue: 510, orders: 6, visitors: 210, conversions: 6 },
+    { date: '2025-11-08', revenue: 585, orders: 7, visitors: 237, conversions: 7 },
+    { date: '2025-11-09', revenue: 450, orders: 5, visitors: 186, conversions: 5 },
+    { date: '2025-11-10', revenue: 525, orders: 6, visitors: 216, conversions: 6 },
+    { date: '2025-11-11', revenue: 480, orders: 6, visitors: 198, conversions: 6 },
+    { date: '2025-11-12', revenue: 555, orders: 7, visitors: 228, conversions: 7 },
+    { date: '2025-11-13', revenue: 615, orders: 7, visitors: 252, conversions: 7 },
+    { date: '2025-11-14', revenue: 420, orders: 5, visitors: 177, conversions: 5 },
+    { date: '2025-11-15', revenue: 510, orders: 6, visitors: 210, conversions: 6 },
+    { date: '2025-11-16', revenue: 525, orders: 6, visitors: 216, conversions: 6 },
+    { date: '2025-11-17', revenue: 450, orders: 5, visitors: 186, conversions: 5 },
+    { date: '2025-11-18', revenue: 555, orders: 7, visitors: 228, conversions: 7 },
+    { date: '2025-11-19', revenue: 585, orders: 7, visitors: 237, conversions: 7 },
+    { date: '2025-11-20', revenue: 510, orders: 6, visitors: 210, conversions: 6 },
+  ],
+  'autopal-asia': [
+    { date: '2025-11-01', revenue: 300, orders: 4, visitors: 124, conversions: 4 },
+    { date: '2025-11-02', revenue: 350, orders: 4, visitors: 144, conversions: 4 },
+    { date: '2025-11-03', revenue: 270, orders: 3, visitors: 114, conversions: 3 },
+    { date: '2025-11-04', revenue: 330, orders: 4, visitors: 136, conversions: 4 },
+    { date: '2025-11-05', revenue: 370, orders: 4, visitors: 152, conversions: 4 },
+    { date: '2025-11-06', revenue: 280, orders: 3, visitors: 118, conversions: 3 },
+    { date: '2025-11-07', revenue: 340, orders: 4, visitors: 140, conversions: 4 },
+    { date: '2025-11-08', revenue: 390, orders: 4, visitors: 158, conversions: 4 },
+    { date: '2025-11-09', revenue: 300, orders: 4, visitors: 124, conversions: 4 },
+    { date: '2025-11-10', revenue: 350, orders: 4, visitors: 144, conversions: 4 },
+    { date: '2025-11-11', revenue: 320, orders: 3, visitors: 132, conversions: 3 },
+    { date: '2025-11-12', revenue: 370, orders: 4, visitors: 152, conversions: 4 },
+    { date: '2025-11-13', revenue: 410, orders: 5, visitors: 168, conversions: 5 },
+    { date: '2025-11-14', revenue: 280, orders: 3, visitors: 118, conversions: 3 },
+    { date: '2025-11-15', revenue: 340, orders: 4, visitors: 140, conversions: 4 },
+    { date: '2025-11-16', revenue: 350, orders: 4, visitors: 144, conversions: 4 },
+    { date: '2025-11-17', revenue: 300, orders: 4, visitors: 124, conversions: 4 },
+    { date: '2025-11-18', revenue: 370, orders: 4, visitors: 152, conversions: 4 },
+    { date: '2025-11-19', revenue: 390, orders: 4, visitors: 158, conversions: 4 },
+    { date: '2025-11-20', revenue: 340, orders: 4, visitors: 140, conversions: 4 },
+  ],
+  'smartcey-home': [
+    { date: '2025-11-01', revenue: 600, orders: 7, visitors: 324, conversions: 7 },
+    { date: '2025-11-02', revenue: 720, orders: 8, visitors: 378, conversions: 8 },
+    { date: '2025-11-03', revenue: 540, orders: 7, visitors: 288, conversions: 7 },
+    { date: '2025-11-04', revenue: 660, orders: 8, visitors: 348, conversions: 8 },
+    { date: '2025-11-05', revenue: 780, orders: 9, visitors: 396, conversions: 9 },
+    { date: '2025-11-06', revenue: 540, orders: 7, visitors: 306, conversions: 7 },
+    { date: '2025-11-07', revenue: 690, orders: 8, visitors: 360, conversions: 8 },
+    { date: '2025-11-08', revenue: 780, orders: 9, visitors: 414, conversions: 9 },
+    { date: '2025-11-09', revenue: 600, orders: 7, visitors: 324, conversions: 7 },
+    { date: '2025-11-10', revenue: 720, orders: 8, visitors: 378, conversions: 8 },
+    { date: '2025-11-11', revenue: 660, orders: 8, visitors: 342, conversions: 8 },
+    { date: '2025-11-12', revenue: 780, orders: 9, visitors: 396, conversions: 9 },
+    { date: '2025-11-13', revenue: 840, orders: 10, visitors: 438, conversions: 10 },
+    { date: '2025-11-14', revenue: 540, orders: 7, visitors: 306, conversions: 7 },
+    { date: '2025-11-15', revenue: 690, orders: 8, visitors: 360, conversions: 8 },
+    { date: '2025-11-16', revenue: 720, orders: 8, visitors: 378, conversions: 8 },
+    { date: '2025-11-17', revenue: 600, orders: 7, visitors: 324, conversions: 7 },
+    { date: '2025-11-18', revenue: 780, orders: 9, visitors: 396, conversions: 9 },
+    { date: '2025-11-19', revenue: 780, orders: 9, visitors: 414, conversions: 9 },
+    { date: '2025-11-20', revenue: 690, orders: 8, visitors: 360, conversions: 8 },
+  ],
+  'smartcey-security': [
+    { date: '2025-11-01', revenue: 400, orders: 5, visitors: 216, conversions: 5 },
+    { date: '2025-11-02', revenue: 480, orders: 6, visitors: 252, conversions: 6 },
+    { date: '2025-11-03', revenue: 360, orders: 4, visitors: 192, conversions: 4 },
+    { date: '2025-11-04', revenue: 440, orders: 5, visitors: 232, conversions: 5 },
+    { date: '2025-11-05', revenue: 520, orders: 6, visitors: 264, conversions: 6 },
+    { date: '2025-11-06', revenue: 360, orders: 4, visitors: 204, conversions: 4 },
+    { date: '2025-11-07', revenue: 460, orders: 6, visitors: 240, conversions: 6 },
+    { date: '2025-11-08', revenue: 520, orders: 6, visitors: 276, conversions: 6 },
+    { date: '2025-11-09', revenue: 400, orders: 5, visitors: 216, conversions: 5 },
+    { date: '2025-11-10', revenue: 480, orders: 6, visitors: 252, conversions: 6 },
+    { date: '2025-11-11', revenue: 440, orders: 5, visitors: 228, conversions: 5 },
+    { date: '2025-11-12', revenue: 520, orders: 6, visitors: 264, conversions: 6 },
+    { date: '2025-11-13', revenue: 560, orders: 6, visitors: 292, conversions: 6 },
+    { date: '2025-11-14', revenue: 360, orders: 4, visitors: 204, conversions: 4 },
+    { date: '2025-11-15', revenue: 460, orders: 6, visitors: 240, conversions: 6 },
+    { date: '2025-11-16', revenue: 480, orders: 6, visitors: 252, conversions: 6 },
+    { date: '2025-11-17', revenue: 400, orders: 5, visitors: 216, conversions: 5 },
+    { date: '2025-11-18', revenue: 520, orders: 6, visitors: 264, conversions: 6 },
+    { date: '2025-11-19', revenue: 520, orders: 6, visitors: 276, conversions: 6 },
+    { date: '2025-11-20', revenue: 460, orders: 6, visitors: 240, conversions: 6 },
+  ],
+  'letilo-women': [
+    { date: '2025-11-01', revenue: 250, orders: 12, visitors: 250, conversions: 12 },
+    { date: '2025-11-02', revenue: 275, orders: 14, visitors: 290, conversions: 14 },
+    { date: '2025-11-03', revenue: 200, orders: 10, visitors: 220, conversions: 10 },
+    { date: '2025-11-04', revenue: 250, orders: 12, visitors: 260, conversions: 12 },
+    { date: '2025-11-05', revenue: 275, orders: 14, visitors: 300, conversions: 14 },
+    { date: '2025-11-06', revenue: 250, orders: 12, visitors: 235, conversions: 12 },
+    { date: '2025-11-07', revenue: 250, orders: 12, visitors: 280, conversions: 12 },
+    { date: '2025-11-08', revenue: 325, orders: 16, visitors: 315, conversions: 16 },
+    { date: '2025-11-09', revenue: 250, orders: 12, visitors: 250, conversions: 12 },
+    { date: '2025-11-10', revenue: 275, orders: 14, visitors: 290, conversions: 14 },
+    { date: '2025-11-11', revenue: 250, orders: 12, visitors: 270, conversions: 12 },
+    { date: '2025-11-12', revenue: 275, orders: 14, visitors: 300, conversions: 14 },
+    { date: '2025-11-13', revenue: 325, orders: 16, visitors: 335, conversions: 16 },
+    { date: '2025-11-14', revenue: 250, orders: 12, visitors: 235, conversions: 12 },
+    { date: '2025-11-15', revenue: 250, orders: 12, visitors: 280, conversions: 12 },
+    { date: '2025-11-16', revenue: 275, orders: 14, visitors: 290, conversions: 14 },
+    { date: '2025-11-17', revenue: 250, orders: 12, visitors: 250, conversions: 12 },
+    { date: '2025-11-18', revenue: 275, orders: 14, visitors: 300, conversions: 14 },
+    { date: '2025-11-19', revenue: 325, orders: 16, visitors: 315, conversions: 16 },
+    { date: '2025-11-20', revenue: 250, orders: 12, visitors: 280, conversions: 12 },
+  ],
+  'letilo-men': [
+    { date: '2025-11-01', revenue: 150, orders: 8, visitors: 150, conversions: 8 },
+    { date: '2025-11-02', revenue: 165, orders: 8, visitors: 174, conversions: 8 },
+    { date: '2025-11-03', revenue: 120, orders: 6, visitors: 132, conversions: 6 },
+    { date: '2025-11-04', revenue: 150, orders: 8, visitors: 156, conversions: 8 },
+    { date: '2025-11-05', revenue: 165, orders: 8, visitors: 180, conversions: 8 },
+    { date: '2025-11-06', revenue: 150, orders: 8, visitors: 141, conversions: 8 },
+    { date: '2025-11-07', revenue: 150, orders: 8, visitors: 168, conversions: 8 },
+    { date: '2025-11-08', revenue: 195, orders: 10, visitors: 189, conversions: 10 },
+    { date: '2025-11-09', revenue: 150, orders: 8, visitors: 150, conversions: 8 },
+    { date: '2025-11-10', revenue: 165, orders: 8, visitors: 174, conversions: 8 },
+    { date: '2025-11-11', revenue: 150, orders: 8, visitors: 162, conversions: 8 },
+    { date: '2025-11-12', revenue: 165, orders: 8, visitors: 180, conversions: 8 },
+    { date: '2025-11-13', revenue: 195, orders: 10, visitors: 201, conversions: 10 },
+    { date: '2025-11-14', revenue: 150, orders: 8, visitors: 141, conversions: 8 },
+    { date: '2025-11-15', revenue: 150, orders: 8, visitors: 168, conversions: 8 },
+    { date: '2025-11-16', revenue: 165, orders: 8, visitors: 174, conversions: 8 },
+    { date: '2025-11-17', revenue: 150, orders: 8, visitors: 150, conversions: 8 },
+    { date: '2025-11-18', revenue: 165, orders: 8, visitors: 180, conversions: 8 },
+    { date: '2025-11-19', revenue: 195, orders: 10, visitors: 189, conversions: 10 },
+    { date: '2025-11-20', revenue: 150, orders: 8, visitors: 168, conversions: 8 },
+  ],
+  'letilo-accessories': [
+    { date: '2025-11-01', revenue: 100, orders: 5, visitors: 100, conversions: 5 },
+    { date: '2025-11-02', revenue: 110, orders: 6, visitors: 116, conversions: 6 },
+    { date: '2025-11-03', revenue: 80, orders: 4, visitors: 88, conversions: 4 },
+    { date: '2025-11-04', revenue: 100, orders: 5, visitors: 104, conversions: 5 },
+    { date: '2025-11-05', revenue: 110, orders: 6, visitors: 120, conversions: 6 },
+    { date: '2025-11-06', revenue: 100, orders: 5, visitors: 94, conversions: 5 },
+    { date: '2025-11-07', revenue: 100, orders: 5, visitors: 112, conversions: 5 },
+    { date: '2025-11-08', revenue: 130, orders: 7, visitors: 126, conversions: 7 },
+    { date: '2025-11-09', revenue: 100, orders: 5, visitors: 100, conversions: 5 },
+    { date: '2025-11-10', revenue: 110, orders: 6, visitors: 116, conversions: 6 },
+    { date: '2025-11-11', revenue: 100, orders: 5, visitors: 108, conversions: 5 },
+    { date: '2025-11-12', revenue: 110, orders: 6, visitors: 120, conversions: 6 },
+    { date: '2025-11-13', revenue: 130, orders: 7, visitors: 134, conversions: 7 },
+    { date: '2025-11-14', revenue: 100, orders: 5, visitors: 94, conversions: 5 },
+    { date: '2025-11-15', revenue: 100, orders: 5, visitors: 112, conversions: 5 },
+    { date: '2025-11-16', revenue: 110, orders: 6, visitors: 116, conversions: 6 },
+    { date: '2025-11-17', revenue: 100, orders: 5, visitors: 100, conversions: 5 },
+    { date: '2025-11-18', revenue: 110, orders: 6, visitors: 120, conversions: 6 },
+    { date: '2025-11-19', revenue: 130, orders: 7, visitors: 126, conversions: 7 },
+    { date: '2025-11-20', revenue: 100, orders: 5, visitors: 112, conversions: 5 },
+  ],
+};

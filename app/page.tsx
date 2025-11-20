@@ -28,7 +28,8 @@ import {
 } from 'lucide-react';
 import StatCard from '@/components/StatCard';
 import DateRangePicker from '@/components/DateRangePicker';
-import { mockIncomeData, mockProjectBreakdown, mockWebsiteAnalytics } from '@/lib/mockData';
+import ProjectCard from '@/components/ProjectCard';
+import { mockIncomeData, mockProjectBreakdown, mockWebsiteAnalytics, mockProjectMetrics, projects } from '@/lib/mockData';
 import { formatCurrency, getDateRange } from '@/lib/utils';
 
 type PeriodType = 'yesterday' | 'last7days' | 'mtd' | 'lastMonth' | 'custom';
@@ -143,6 +144,42 @@ export default function Dashboard() {
       'Sessions': item.sessions,
     }));
   }, [filteredWebsiteData]);
+
+  // Calculate project metrics
+  const projectMetrics = useMemo(() => {
+    const dateRange = getDateRange(period, customDateRange);
+    const filteredMetrics = mockProjectMetrics.filter((item) => {
+      const itemDate = new Date(item.date);
+      return itemDate >= dateRange.start && itemDate <= dateRange.end;
+    });
+
+    return projects.map((project) => {
+      const metrics = filteredMetrics.reduce(
+        (acc, item) => {
+          const projectData = item[project.id as keyof typeof item] as any;
+          if (projectData) {
+            acc.revenue += projectData.revenue || 0;
+            acc.orders += projectData.orders || 0;
+            acc.visitors += projectData.visitors || 0;
+            acc.conversions += projectData.conversions || 0;
+          }
+          return acc;
+        },
+        { revenue: 0, orders: 0, visitors: 0, conversions: 0 }
+      );
+
+      const aov = metrics.orders > 0 ? metrics.revenue / metrics.orders : 0;
+      const conversionRate = metrics.visitors > 0 ? (metrics.conversions / metrics.visitors) * 100 : 0;
+
+      return {
+        ...project,
+        ...metrics,
+        aov,
+        conversionRate,
+        trend: 8.5 + Math.random() * 7, // Mock trend data
+      };
+    });
+  }, [period, customDateRange]);
 
   const handleDateRangeChange = (startDate: Date, endDate: Date) => {
     setCustomDateRange({ startDate, endDate });
@@ -276,6 +313,27 @@ export default function Dashboard() {
               trendLabel="vs previous period"
               variant="primary"
             />
+          </div>
+        </div>
+
+        {/* Project Performance Tiles */}
+        <div className="mb-8">
+          <h2 className="mb-4 text-xl font-semibold text-white">Projects</h2>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {projectMetrics.map((project) => (
+              <ProjectCard
+                key={project.id}
+                id={project.id}
+                name={project.name}
+                description={project.description}
+                revenue={project.revenue}
+                orders={project.orders}
+                aov={project.aov}
+                conversionRate={project.conversionRate}
+                color={project.color}
+                trend={project.trend}
+              />
+            ))}
           </div>
         </div>
 

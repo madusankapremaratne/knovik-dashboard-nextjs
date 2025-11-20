@@ -1,0 +1,66 @@
+version: '3.8'
+
+services:
+  dashboard:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: knovik-dashboard
+    ports:
+      - "3000:3000"
+    environment:
+      # Enable mock data for development
+      ENABLE_MOCK_DATA: 'true'
+      
+      # API Configuration
+      NEXT_PUBLIC_API_URL: 'http://localhost:3000/api'
+      
+      # Shopify Integration
+      SHOPIFY_API_ENDPOINT: '${SHOPIFY_API_ENDPOINT:-https://your-store.myshopify.com/admin/api/2024-01}'
+      SHOPIFY_API_TOKEN: '${SHOPIFY_API_TOKEN:-}'
+      
+      # WooCommerce Integration
+      WOOCOMMERCE_API_URL: '${WOOCOMMERCE_API_URL:-https://your-site.com/wp-json/wc/v3}'
+      WOOCOMMERCE_API_TOKEN: '${WOOCOMMERCE_API_TOKEN:-}'
+      
+      # Node environment
+      NODE_ENV: development
+    
+    volumes:
+      # Development mode - mount source code
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+    
+    restart: unless-stopped
+    
+    # Health check
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+
+  # Optional: API mock server (for testing without real APIs)
+  mock-api:
+    image: node:18-alpine
+    working_dir: /app
+    volumes:
+      - ./mock-server:/app
+    command: node server.js
+    ports:
+      - "3001:3001"
+    environment:
+      PORT: 3001
+    restart: unless-stopped
+    depends_on:
+      - dashboard
+
+volumes:
+  node_modules:
+  next_build:
+
+networks:
+  default:
+    name: knovik-network

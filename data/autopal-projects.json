@@ -1,0 +1,214 @@
+{
+  "project": "Autopal",
+  "type": "Automotive Solutions",
+  "teamLead": {
+    "name": "Erandika Priyadarshani",
+    "role": "Team Lead"
+  },
+  "projectOwners": [
+    {
+      "name": "Iroshana Wickremasinghe",
+      "role": "VP Engineering"
+    },
+    {
+      "name": "Madusanka Premaratne",
+      "role": "Founder & CEO"
+    },
+    {
+      "name": "Hasanthi Lakmali",
+      "role": "VP Operations"
+    }
+  ],
+  "projectManager": {
+    "name": "Sasanjani Weliwita",
+    "role": "Project Manager"
+  },
+  "totalApps": 13,
+  "apps": [
+    {
+      "id": 1,
+      "name": "NGXPlay",
+      "appId": "431496428",
+      "type": "Application",
+      "status": "Active",
+      "category": "Media & Video"
+    },
+    {
+      "id": 2,
+      "name": "Screen2Auto",
+      "appId": "405835095",
+      "type": "Application",
+      "domain": "screen2auto.com",
+      "status": "Active",
+      "category": "Automotive"
+    },
+    {
+      "id": 3,
+      "name": "Wheelpal",
+      "appId": "403580132",
+      "type": "Application",
+      "domain": "wheelpal.app",
+      "status": "Active",
+      "category": "Automotive",
+      "notes": "Cross-platform app (iOS & Android)"
+    },
+    {
+      "id": 4,
+      "name": "CarbridgeX",
+      "appId": "503400725",
+      "type": "Application",
+      "domain": "carbridgex.com",
+      "status": "Active",
+      "category": "Automotive"
+    },
+    {
+      "id": 5,
+      "name": "Carplay Hacks",
+      "appId": "250062012",
+      "type": "Application",
+      "domain": "carplayhacks.com",
+      "status": "Active",
+      "category": "Automotive"
+    },
+    {
+      "id": 6,
+      "name": "Carplay++",
+      "appId": "502369359",
+      "type": "Application",
+      "domain": "carplayhacks.com",
+      "status": "Active",
+      "category": "Automotive",
+      "notes": "Premium/Enhanced version of Carplay Hacks"
+    },
+    {
+      "id": 7,
+      "name": "Carstream",
+      "appId": "433022484",
+      "type": "Application",
+      "domain": "carstream.app",
+      "status": "Active",
+      "category": "Automotive"
+    },
+    {
+      "id": 8,
+      "name": "Cartube",
+      "appId": "403581044",
+      "type": "Application",
+      "domain": "cartube.app",
+      "status": "Active",
+      "category": "Automotive"
+    },
+    {
+      "id": 9,
+      "name": "AA Store",
+      "appId": "501368723",
+      "type": "E-commerce",
+      "domain": "androidautohacks.com",
+      "status": "Active",
+      "category": "Shopping"
+    },
+    {
+      "id": 10,
+      "name": "AAStream",
+      "appId": "431552523",
+      "type": "Application",
+      "domain": "androidautohacks.com",
+      "status": "Active",
+      "category": "Automotive"
+    },
+    {
+      "id": 11,
+      "name": "Android Auto Hacks",
+      "appId": "461346559",
+      "type": "Application",
+      "domain": "androidautohacks.com",
+      "status": "Active",
+      "category": "Automotive"
+    },
+    {
+      "id": 12,
+      "name": "Car Movie",
+      "appId": "501940267",
+      "type": "Application",
+      "domain": "carmovie.app or similar",
+      "status": "Active",
+      "category": "Entertainment"
+    },
+    {
+      "id": 13,
+      "name": "Carbridge Install",
+      "appId": "435942570",
+      "type": "Application",
+      "domain": "carbridgex.com",
+      "status": "Active",
+      "category": "Automotive",
+      "notes": "Installation utility for Carbridge"
+    }
+  ],
+  "domains": [
+    {
+      "domain": "carplayhacks.com",
+      "type": "SEO/Blog",
+      "googleAnalyticsId": ""
+    },
+    {
+      "domain": "blog.carplayhacks.com",
+      "type": "Blog",
+      "googleAnalyticsId": ""
+    },
+    {
+      "domain": "shop.carplayhacks.com",
+      "type": "E-commerce",
+      "googleAnalyticsId": ""
+    },
+    {
+      "domain": "wheelpal.app",
+      "type": "Application",
+      "googleAnalyticsId": ""
+    },
+    {
+      "domain": "cartube.app",
+      "type": "Application",
+      "googleAnalyticsId": ""
+    },
+    {
+      "domain": "carstream.app",
+      "type": "Application",
+      "googleAnalyticsId": ""
+    },
+    {
+      "domain": "screen2auto.com",
+      "type": "SEO/Application",
+      "googleAnalyticsId": ""
+    },
+    {
+      "domain": "androidautohacks.com",
+      "type": "SEO/E-commerce",
+      "googleAnalyticsId": ""
+    },
+    {
+      "domain": "fermata-auto.com",
+      "type": "SEO/Blog",
+      "googleAnalyticsId": ""
+    },
+    {
+      "domain": "fermabox.com",
+      "type": "E-commerce",
+      "googleAnalyticsId": ""
+    },
+    {
+      "domain": "carbridgex.com",
+      "type": "E-commerce/Application",
+      "googleAnalyticsId": ""
+    }
+  ],
+  "statistics": {
+    "totalApplications": 13,
+    "automativeApps": 9,
+    "ecommerceApps": 1,
+    "mediaApps": 1,
+    "entertainmentApps": 1,
+    "otherApps": 1,
+    "totalDomains": 11
+  }
+}

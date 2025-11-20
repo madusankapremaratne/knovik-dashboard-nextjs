@@ -1,0 +1,100 @@
+{
+  "project": "Smartcey",
+  "type": "Smart Home & IoT Solutions",
+  "teamLead": {
+    "name": "Nuthara Wickremasinghe",
+    "role": "Team Lead"
+  },
+  "projectOwners": [
+    {
+      "name": "Ishara Fernando",
+      "role": "VP Marketing"
+    },
+    {
+      "name": "Madusanka Premaratne",
+      "role": "Founder & CEO"
+    }
+  ],
+  "projectManagers": [
+    {
+      "name": "Dimuthma Umashani",
+      "role": "Project Manager"
+    }
+  ],
+  "totalDomains": 8,
+  "domains": [
+    {
+      "id": 1,
+      "domain": "addtohomekit.com",
+      "type": "Application/Main Site",
+      "description": "AddToHomeKit main application and website",
+      "googleAnalyticsId": ""
+    },
+    {
+      "id": 2,
+      "domain": "blog.addtohomekit.com",
+      "type": "Blog/SEO",
+      "description": "AddToHomeKit blog for content and SEO",
+      "googleAnalyticsId": ""
+    },
+    {
+      "id": 3,
+      "domain": "athbridge.com",
+      "type": "E-commerce",
+      "description": "ATH Bridge - HomeKit accessory bridge products",
+      "googleAnalyticsId": ""
+    },
+    {
+      "id": 4,
+      "domain": "matterhubs.com",
+      "type": "SEO/Blog",
+      "description": "Matter Hubs - Smart home hubs for Matter protocol",
+      "googleAnalyticsId": ""
+    },
+    {
+      "id": 5,
+      "domain": "zigbeehubs.com",
+      "type": "SEO/Blog",
+      "description": "Zigbee Hubs - Smart home hubs for Zigbee protocol",
+      "googleAnalyticsId": ""
+    },
+    {
+      "id": 6,
+      "domain": "sonoffmini.com",
+      "type": "E-commerce",
+      "description": "Sonoff Mini - Smart home automation products",
+      "googleAnalyticsId": ""
+    },
+    {
+      "id": 7,
+      "domain": "findmy.lk",
+      "type": "E-commerce",
+      "description": "Find My LK - Local smart home solutions",
+      "googleAnalyticsId": ""
+    },
+    {
+      "id": 8,
+      "domain": "kodmy.com",
+      "type": "E-commerce/Platform",
+      "description": "Kodmy - Smart home platform and marketplace",
+      "googleAnalyticsId": ""
+    }
+  ],
+  "domainBreakdown": {
+    "totalDomains": 8,
+    "applications": 1,
+    "blogs": 2,
+    "ecommerceSites": 4,
+    "platforms": 1
+  },
+  "statistics": {
+    "totalDomains": 8,
+    "activeProjects": 8,
+    "platformType": "Smart Home & IoT",
+    "protocols": [
+      "HomeKit",
+      "Matter",
+      "Zigbee"
+    ]
+  }
+}
